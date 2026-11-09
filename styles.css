@@ -1,0 +1,192 @@
+/* ---------- COLORS (from the Figma design) ---------- */
+body {
+  --dark-gray: #434343;
+  --light-gray: #d9d9d9;
+  --purple: #45009f;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* ---------- BASIC SETUP ---------- */
+/* The Figma frame was drawn at 2x, so every size below is the Figma size divided by 2. */
+body {
+  font-family: "Bayon", sans-serif;
+  background-color: var(--dark-gray);
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+h2 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 83px;
+  padding: 0 20px 0 3px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 50px;
+  height: 67px;
+  display: block;
+}
+
+.nav-list {
+  display: flex;
+  align-items: center;
+  gap: 34px;
+}
+
+.nav-link {
+  display: block;
+  width: 66px;
+  height: 38px;
+  line-height: 38px;
+  text-align: center;
+  font-size: 12px;
+  background-color: var(--light-gray);
+}
+
+.tickets-link {
+  width: 150px;
+  height: 59px;
+  line-height: 59px;
+  font-size: 18px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 662px;
+  padding-top: 65px;
+  box-sizing: border-box;
+  background-image: url("images/hero.jpg");
+  background-size: cover;
+  background-position: center;
+}
+
+.wordmark {
+  width: 531px;
+  max-width: 90%;
+}
+
+.tagline {
+  max-width: 440px;
+  margin-top: 13px;
+  font-size: 18px;
+  text-align: center;
+  color: var(--black);
+}
+
+/* ---------- SCHEDULE ---------- */
+.schedule {
+  display: flex;
+  justify-content: center;
+  height: 132px;
+}
+
+.schedule-box {
+  width: 305px;
+  height: 156px;
+  margin-top: -24px;
+  padding-top: 31px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 32px;
+  background-color: var(--light-gray);
+}
+
+/* ---------- PERFORMERS ---------- */
+.performers {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-top: 416px;
+  padding-bottom: 82px;
+  background-image: url("images/performers.jpg");
+  background-size: 100% 543px;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+.performers-title {
+  font-size: 32px;
+  color: var(--white);
+}
+
+.performer-list {
+  width: 218px;
+  height: 267px;
+  margin-top: 26px;
+  padding-top: 21px;
+  box-sizing: border-box;
+  text-align: center;
+  font-size: 18px;
+  line-height: 28px;
+  background-color: var(--light-gray);
+}
+
+/* ---------- REGISTER ---------- */
+.register {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  height: 205px;
+  padding: 42px 70px 0 68px;
+  box-sizing: border-box;
+  background-color: var(--purple);
+}
+
+.register-text {
+  width: 150px;
+  margin-top: 3px;
+  font-size: 32px;
+  color: var(--white);
+}
+
+.register-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 228px;
+  height: 141px;
+  font-size: 32px;
+  background-color: var(--light-gray);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  margin-top: 73px;
+  height: 58px;
+  background-color: var(--light-gray);
+}
+
+.about-link {
+  display: block;
+  line-height: 58px;
+  text-align: center;
+  font-size: 24px;
+}
