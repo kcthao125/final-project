@@ -8,12 +8,12 @@ body {
 }
 
 /* ---------- BASIC SETUP ---------- */
-/* The Figma frame was drawn at 2x, so every size below is the Figma size divided by 2. */
+/* Sizes match your Figma laptop frame (1299px wide). */
+/* Widths use % so the page stretches with the window. */
 body {
   font-family: "Bayon", sans-serif;
   background-color: var(--dark-gray);
-  max-width: 650px;
-  margin: 0 auto;
+  margin: 0;
 }
 
 h2 {
@@ -41,38 +41,42 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 83px;
-  padding: 0 20px 0 3px;
+  height: 166px;
+  padding: 0 3% 0 7px;
   box-sizing: border-box;
 }
 
 .logo {
-  width: 50px;
-  height: 67px;
+  width: 100px;
+  height: 134px;
   display: block;
+}
+
+.site-nav {
+  width: 85%;
 }
 
 .nav-list {
   display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 34px;
 }
 
 .nav-link {
   display: block;
-  width: 66px;
-  height: 38px;
-  line-height: 38px;
+  width: 133px;
+  height: 76px;
+  line-height: 76px;
   text-align: center;
-  font-size: 12px;
+  font-size: 24px;
   background-color: var(--light-gray);
 }
 
 .tickets-link {
-  width: 150px;
-  height: 59px;
-  line-height: 59px;
-  font-size: 18px;
+  width: 301px;
+  height: 118px;
+  line-height: 118px;
+  font-size: 36px;
 }
 
 /* ---------- HERO ---------- */
@@ -80,8 +84,8 @@ ul {
   display: flex;
   flex-direction: column;
   align-items: center;
-  height: 662px;
-  padding-top: 65px;
+  height: 1325px;
+  padding-top: 129px;
   box-sizing: border-box;
   background-image: url("images/hero.jpg");
   background-size: cover;
@@ -89,14 +93,14 @@ ul {
 }
 
 .wordmark {
-  width: 531px;
-  max-width: 90%;
+  width: 82%;
+  max-width: 1063px;
 }
 
 .tagline {
-  max-width: 440px;
-  margin-top: 13px;
-  font-size: 18px;
+  max-width: 800px;
+  margin-top: 26px;
+  font-size: 36px;
   text-align: center;
   color: var(--black);
 }
@@ -105,47 +109,54 @@ ul {
 .schedule {
   display: flex;
   justify-content: center;
-  height: 132px;
+  height: 265px;
 }
 
 .schedule-box {
-  width: 305px;
-  height: 156px;
-  margin-top: -24px;
-  padding-top: 31px;
+  width: 47%;
+  min-width: 320px;
+  height: 313px;
+  margin-top: -48px;
+  padding-top: 62px;
   box-sizing: border-box;
   text-align: center;
-  font-size: 32px;
+  font-size: 64px;
   background-color: var(--light-gray);
 }
 
 /* ---------- PERFORMERS ---------- */
-.performers {
+.performers-photo {
+  display: block;
+  width: 100%;
+  height: 1087px;
+  object-fit: cover;
+}
+
+/* This block slides up 254px so it sits on top of the photo. */
+.performers-info {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding-top: 416px;
-  padding-bottom: 82px;
-  background-image: url("images/performers.jpg");
-  background-size: 100% 543px;
-  background-repeat: no-repeat;
-  background-position: center top;
+  margin-top: -254px;
+  padding-bottom: 165px;
 }
 
 .performers-title {
-  font-size: 32px;
+  font-size: 64px;
+  line-height: 64px;
   color: var(--white);
 }
 
 .performer-list {
-  width: 218px;
-  height: 267px;
-  margin-top: 26px;
-  padding-top: 21px;
+  width: 435px;
+  height: 534px;
+  margin-top: 52px;
+  padding-top: 42px;
   box-sizing: border-box;
   text-align: center;
-  font-size: 18px;
-  line-height: 28px;
+  font-size: 36px;
+  line-height: 57px;
   background-color: var(--light-gray);
 }
 
@@ -154,16 +165,16 @@ ul {
   display: flex;
   justify-content: space-between;
   align-items: flex-start;
-  height: 205px;
-  padding: 42px 70px 0 68px;
+  height: 411px;
+  padding: 84px 11% 0 10.5%;
   box-sizing: border-box;
   background-color: var(--purple);
 }
 
 .register-text {
-  width: 150px;
-  margin-top: 3px;
-  font-size: 32px;
+  width: 400px;
+  margin-top: 6px;
+  font-size: 64px;
   color: var(--white);
 }
 
@@ -171,22 +182,101 @@ ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 228px;
-  height: 141px;
-  font-size: 32px;
+  width: 456px;
+  height: 283px;
+  font-size: 64px;
   background-color: var(--light-gray);
 }
 
 /* ---------- FOOTER ---------- */
 .site-footer {
-  margin-top: 73px;
-  height: 58px;
+  margin-top: 146px;
+  height: 116px;
   background-color: var(--light-gray);
 }
 
 .about-link {
   display: block;
-  line-height: 58px;
+  line-height: 116px;
   text-align: center;
-  font-size: 24px;
+  font-size: 48px;
+}
+
+/* ---------- SMALLER WINDOWS (tablet and under) ---------- */
+@media (max-width: 1000px) {
+  .site-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 3%;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+  }
+
+  .tickets-link {
+    width: 200px;
+    height: 76px;
+    line-height: 76px;
+    font-size: 30px;
+  }
+
+  .hero {
+    height: 800px;
+    padding-top: 60px;
+  }
+
+  .tagline {
+    font-size: 28px;
+    padding: 0 5%;
+  }
+
+  .schedule-box {
+    font-size: 44px;
+    padding-top: 50px;
+  }
+
+  .performers-photo {
+    height: 700px;
+  }
+
+  .performers-info {
+    margin-top: -150px;
+  }
+
+  .performers-title {
+    font-size: 48px;
+  }
+
+  .performer-list {
+    width: 90%;
+    max-width: 435px;
+  }
+
+  .register {
+    flex-direction: column;
+    align-items: center;
+    height: auto;
+    padding: 50px 5%;
+    text-align: center;
+  }
+
+  .register-text {
+    width: auto;
+    margin: 0 0 30px 0;
+    font-size: 44px;
+  }
+
+  .register-button {
+    width: 100%;
+    max-width: 456px;
+    height: 200px;
+  }
 }
