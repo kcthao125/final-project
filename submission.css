@@ -1,0 +1,304 @@
+/* ---------- COLORS (from the Figma design) ---------- */
+body {
+  --dark-gray: #434343;
+  --light-gray: #d9d9d9;
+  --black: #000000;
+  --white: #ffffff;
+}
+
+/* ---------- BASIC SETUP ---------- */
+/* Sizes match your Figma laptop frame (1299px wide). */
+/* Widths use % so the page stretches with the window. */
+body {
+  font-family: "Bayon", sans-serif;
+  background-color: var(--dark-gray);
+  margin: 0;
+}
+
+h2 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+}
+
+a {
+  color: var(--black);
+  text-decoration: none;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* ---------- HEADER ---------- */
+.site-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 166px;
+  padding: 0 3% 0 7px;
+  box-sizing: border-box;
+}
+
+.logo {
+  width: 100px;
+  height: 134px;
+  display: block;
+}
+
+.site-nav {
+  width: 85%;
+}
+
+.nav-list {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Nav with only 4 links: line them up on the left instead of spreading out */
+.nav-list-left {
+  justify-content: flex-start;
+  gap: 70px;
+}
+
+.nav-link {
+  display: block;
+  width: 133px;
+  height: 76px;
+  line-height: 76px;
+  text-align: center;
+  font-size: 24px;
+  background-color: var(--light-gray);
+}
+
+/* ---------- FOOTER ---------- */
+.site-footer {
+  margin-top: 146px;
+  height: 116px;
+  background-color: var(--light-gray);
+}
+
+.about-link {
+  display: block;
+  line-height: 116px;
+  text-align: center;
+  font-size: 48px;
+}
+
+/* ---------- TICKETS PAGE ---------- */
+.tickets-hero {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  height: 555px;
+  padding-top: 154px;
+  box-sizing: border-box;
+  background-image: url("images/image 3.png");
+  background-size: cover;
+  background-position: center;
+}
+
+.tickets-title {
+  margin: 0;
+  font-weight: normal;
+  font-size: 128px;
+  line-height: 128px;
+  color: var(--white);
+}
+
+.passes {
+  display: flex;
+  justify-content: center;
+  gap: 157px;
+  padding-top: 155px;
+}
+
+.pass {
+  width: 456px;
+}
+
+.pass-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 283px;
+  font-size: 64px;
+  color: var(--black);
+}
+
+.one-day {
+  background-color: var(--light-gray);
+}
+
+.three-day {
+  background-color: #9747ff;
+}
+
+.price-list {
+  margin-top: 11px;
+  text-align: center;
+  font-size: 36px;
+  line-height: 65px;
+  color: var(--white);
+}
+
+.tickets-footer {
+  margin-top: 202px;
+}
+
+/* ---------- CHECKOUT (SUBMISSION) PAGE ---------- */
+.checkout-card {
+  width: 71%;
+  margin: 107px auto 0 auto;
+  padding: 67px 56px 171px 56px;
+  box-sizing: border-box;
+  background-color: var(--dark-gray);
+}
+
+.card-form {
+  display: flex;
+  flex-direction: column;
+  gap: 42px;
+}
+
+.card-title {
+  margin: 0 0 25px 0;
+  font-weight: normal;
+  font-size: 64px;
+  line-height: 64px;
+  color: var(--white);
+}
+
+.card-input {
+  width: 100%;
+  height: 130px;
+  padding: 0 30px;
+  box-sizing: border-box;
+  border: none;
+  font-family: "Bayon", sans-serif;
+  font-size: 36px;
+  background-color: var(--light-gray);
+}
+
+.or-text {
+  margin: 42px 0 136px 0;
+  text-align: center;
+  font-size: 64px;
+  line-height: 64px;
+  color: var(--white);
+}
+
+.paypal-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 327px;
+  background-color: var(--light-gray);
+}
+
+.paypal-logo {
+  width: 463px;
+  max-width: 90%;
+}
+
+.back-button {
+  display: block;
+  width: 301px;
+  height: 118px;
+  margin: 74px 0 0 47px;
+  line-height: 118px;
+  text-align: center;
+  font-family: Arial, sans-serif;
+  font-size: 128px;
+  color: var(--black);
+  background-color: var(--light-gray);
+}
+
+.checkout-footer {
+  margin-top: 69px;
+}
+
+/* ---------- SMALLER WINDOWS (tablet and under) ---------- */
+@media (max-width: 1000px) {
+  .site-header {
+    flex-wrap: wrap;
+    height: auto;
+    padding: 10px 3%;
+  }
+
+  .site-nav {
+    width: 100%;
+  }
+
+  .nav-list {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin: 10px 0;
+  }
+
+  /* Tickets page */
+  .tickets-hero {
+    height: 400px;
+    padding-top: 100px;
+  }
+
+  .tickets-title {
+    font-size: 80px;
+    line-height: 80px;
+  }
+
+  .passes {
+    flex-direction: column;
+    align-items: center;
+    gap: 50px;
+    padding: 60px 5% 0 5%;
+  }
+
+  .pass {
+    width: 100%;
+    max-width: 456px;
+  }
+
+  .tickets-footer {
+    margin-top: 100px;
+  }
+
+  /* Checkout page */
+  .checkout-card {
+    width: 90%;
+    margin-top: 60px;
+    padding: 40px 5% 80px 5%;
+  }
+
+  .card-title {
+    font-size: 44px;
+  }
+
+  .card-input {
+    height: 90px;
+  }
+
+  .or-text {
+    margin-bottom: 60px;
+    font-size: 44px;
+  }
+
+  .paypal-button {
+    height: 220px;
+  }
+
+  .back-button {
+    width: 200px;
+    height: 90px;
+    margin-left: 5%;
+    line-height: 90px;
+    font-size: 80px;
+  }
+}

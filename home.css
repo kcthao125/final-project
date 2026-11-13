@@ -1,0 +1,399 @@
+/* ==========================================================
+   Amplify | home.css
+   Desktop-first layout from the Figma "Home page" frame (1299px wide),
+   with tablet and phone breakpoints at the bottom.
+   ========================================================== */
+
+:root {
+  --purple-deep: #4a00a0;     /* register band */
+  --purple-mid: #4b3a6e;      /* section backgrounds */
+  --purple-dark: #2a2040;     /* gradient shadow */
+  --purple-glow: #8a3ffc;     /* wordmark / logo */
+  --gray-card: #d9d9d9;       /* cards and buttons */
+  --ink: #1a1a1a;
+  --white: #ffffff;
+
+  --font-display: "Staatliches", "Bebas Neue", Impact, "Arial Narrow", sans-serif;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-display);
+  color: var(--ink);
+  background: var(--purple-dark);
+  text-transform: uppercase;
+  line-height: 1.4;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, p, ul {
+  margin: 0;
+  padding: 0;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+:focus-visible {
+  outline: 3px solid var(--white);
+  outline-offset: 3px;
+  box-shadow: 0 0 0 6px var(--purple-glow);
+}
+
+/* ---------- Shared pieces ---------- */
+
+.card {
+  background: var(--gray-card);
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-card);
+  color: var(--ink);
+  text-align: center;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn:hover {
+  background: var(--ink);
+  color: var(--gray-card);
+}
+
+.btn--small {
+  width: 133px;
+  height: 76px;
+  font-size: 1.1rem;
+  letter-spacing: 0.04em;
+}
+
+.btn--tickets {
+  width: 301px;
+  height: 118px;
+  font-size: 1.7rem;
+  letter-spacing: 0.04em;
+}
+
+.btn--register {
+  width: 456px;
+  max-width: 100%;
+  height: 283px;
+  font-size: 2.6rem;
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Header ---------- */
+
+.site-header {
+  position: absolute;
+  inset: 0 0 auto 0;
+  z-index: 10;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding: 24px 39px 24px 7px;
+  background: linear-gradient(to bottom, rgba(42, 32, 64, 0.85), rgba(42, 32, 64, 0));
+}
+
+.site-header__logo {
+  flex: none;
+  width: 100px;
+  height: 134px;
+  display: grid;
+  place-items: center;
+  margin-top: -13px;
+  font-size: 7rem;
+  line-height: 1;
+  color: var(--purple-glow);
+  text-shadow: 6px 0 0 var(--ink);
+}
+
+.site-nav {
+  flex: 1;
+  padding-left: clamp(0rem, 6vw, 4rem);
+}
+
+.site-nav__list {
+  display: flex;
+  gap: clamp(1rem, 4.5vw, 67px);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  position: relative;
+  min-height: clamp(560px, 102vw, 1325px);
+  padding: clamp(9rem, 23vw, 295px) 1.5rem 0;
+  text-align: center;
+  color: var(--ink);
+  background:
+    linear-gradient(to bottom, rgba(42, 32, 64, 0.2), rgba(26, 20, 40, 0.75)),
+    radial-gradient(ellipse at 50% 35%, #d98cff 0%, #8a3ffc 28%, #3b1a8a 55%, #1a1428 85%),
+    url("images/hero-crowd.jpg") center / cover no-repeat;
+  background-color: #1a1428;
+}
+
+.hero__title {
+  font-size: clamp(5rem, 22vw, 17rem);
+  font-weight: 400;
+  line-height: 0.95;
+  letter-spacing: 0.02em;
+  color: var(--ink);
+  /* purple edge gives the wordmark the lit-from-behind look in the design */
+  text-shadow: -0.04em 0.02em 0 var(--purple-glow);
+}
+
+.hero__tagline {
+  max-width: 777px;
+  margin: clamp(1rem, 3vw, 2.5rem) auto 0;
+  font-size: clamp(0.8rem, 1.6vw, 1.3rem);
+  letter-spacing: 0.05em;
+  color: var(--ink);
+}
+
+/* ---------- Schedule ---------- */
+
+.schedule {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  justify-content: center;
+  background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid) 55%, var(--purple-dark));
+}
+
+.schedule__card {
+  width: min(610px, 90%);
+  min-height: 356px;
+  /* straddles the hero above and the performers photo below */
+  margin: -48px 0 -43px;
+  display: grid;
+  place-items: center;
+  padding: 2rem;
+  text-align: center;
+}
+
+.schedule__title {
+  font-size: clamp(1.6rem, 3.4vw, 2.8rem);
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.03em;
+}
+
+.schedule__days {
+  display: block;
+}
+
+/* ---------- Performers ---------- */
+
+.performers {
+  position: relative;
+  padding: clamp(18rem, 55vw, 833px) 1.5rem 165px;
+  background: linear-gradient(160deg, var(--purple-mid), var(--purple-dark) 70%);
+}
+
+/* black-and-white band photo behind the heading */
+.performers::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto 0;
+  height: clamp(20rem, 84vw, 1087px);
+  background:
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.6)),
+    radial-gradient(ellipse at 50% 30%, #f2f2f2 0%, #777 40%, #111 85%),
+    url("images/performers-band.jpg") center / cover no-repeat;
+  background-color: #111;
+}
+
+.performers__inner {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.performers__title {
+  font-size: clamp(1.8rem, 3.6vw, 2.9rem);
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  color: var(--white);
+  margin-bottom: 1rem;
+}
+
+.performers__card {
+  width: min(435px, 92%);
+  padding: 2.5rem 1.5rem;
+  text-align: center;
+}
+
+.performers__list {
+  display: grid;
+  gap: 0.9rem;
+  font-size: clamp(1rem, 1.6vw, 1.25rem);
+  letter-spacing: 0.04em;
+}
+
+/* ---------- Register ---------- */
+
+.register {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+  min-height: 411px;
+  padding: 3rem clamp(1.5rem, 10.5vw, 137px) 3rem clamp(1.5rem, 10.5vw, 137px);
+  background: var(--purple-deep);
+  color: var(--white);
+}
+
+.register__title {
+  max-width: 341px;
+  font-size: clamp(2rem, 4.4vw, 3.4rem);
+  font-weight: 400;
+  line-height: 1.7;
+  letter-spacing: 0.03em;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  margin-top: 146px;
+  background: var(--gray-card);
+}
+
+.site-footer__about {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 116px;
+  font-size: clamp(1.4rem, 2.4vw, 2rem);
+  letter-spacing: 0.05em;
+}
+
+.site-footer__about:hover {
+  background: var(--ink);
+  color: var(--gray-card);
+}
+
+/* ==========================================================
+   Responsive
+   ========================================================== */
+
+/* Tablet and small laptops */
+@media (max-width: 1000px) {
+  .site-header {
+    flex-wrap: wrap;
+    padding-right: 1rem;
+  }
+
+  .btn--small {
+    width: 108px;
+    height: 60px;
+    font-size: 0.95rem;
+  }
+
+  .btn--tickets {
+    width: 200px;
+    height: 76px;
+    font-size: 1.3rem;
+  }
+
+  .btn--register {
+    height: 200px;
+    font-size: 2rem;
+  }
+
+  .site-footer {
+    margin-top: 80px;
+  }
+}
+
+/* Phones: logo and Tickets share the top row, nav buttons wrap beneath */
+@media (max-width: 640px) {
+  .site-header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-areas:
+      "logo tickets"
+      "nav  nav";
+    align-items: center;
+    padding: 12px;
+  }
+
+  .site-header__logo {
+    grid-area: logo;
+    width: 56px;
+    height: 76px;
+    margin: 0;
+    font-size: 4rem;
+  }
+
+  .btn--tickets {
+    grid-area: tickets;
+    justify-self: end;
+    width: 140px;
+    height: 56px;
+    font-size: 1.1rem;
+  }
+
+  .site-nav {
+    grid-area: nav;
+    padding: 0;
+  }
+
+  .site-nav__list {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.5rem;
+  }
+
+  .btn--small {
+    width: 100%;
+    height: 44px;
+    font-size: 0.75rem;
+  }
+
+  .hero {
+    padding-top: 11rem;
+  }
+
+  .schedule__card {
+    min-height: 240px;
+  }
+
+  .register {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .register__title {
+    line-height: 1.4;
+  }
+
+  .btn--register {
+    width: 100%;
+    height: 120px;
+  }
+
+  .site-footer {
+    margin-top: 48px;
+  }
+}
